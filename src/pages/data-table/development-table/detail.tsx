@@ -38,11 +38,11 @@ const ModalDetail: FC<Props> = ({detailData, openDialog, setOpenDialog}) => {
               </div>
               <div className={`${styleCustom.section}`}>
                 <label className={`${styleCustom.label}`}>Task Name</label>
-                <span className='font-bold text-black'>{detailData?.name}</span>
+                <span className='font-bold text-black'>{detailData?.task}</span>
               </div>
               <div className={`${styleCustom.section}`}>
                 <label className={`${styleCustom.label}`}>Progress</label>
-                <span className='font-bold text-black'>{detailData?.name}</span>
+                <span className='font-bold text-black'>{detailData?.progress}</span>
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>

@@ -1,7 +1,7 @@
 import DataTableComponent from '@/components/data-table'
 import {Button} from '@/components/ui/button'
 import {Card, CardHeader, CardTitle, CardContent} from '@/components/ui/card'
-import {useState} from 'react'
+import {useEffect, useState} from 'react'
 import AddEditModal from './AddEdit'
 import {PlusIcon} from '@heroicons/react/24/outline'
 import ModalDelete from './delete'
@@ -14,12 +14,18 @@ export default function DevelopmentTable() {
   const [openModalDetail, setOpenModalDetail] = useState<boolean>(false)
   const [isStatus, setStatus] = useState<any>({id: null, status: false})
   const [detail, setDetail] = useState<any>()
+  const [searchData, setSearchData] = useState<any>(null)
+  const [filteredData, setFilteredData] = useState<any>(dataDevelopmentTable)
   const [formDevelopmentTable, setFormDevelopmentTable] = useState<any>({
     name: '',
     position: '',
     progress: '',
     task: '',
   })
+
+  useEffect(() => {
+    setFilteredData(dataDevelopmentTable)
+  }, [dataDevelopmentTable])
 
   const onEdit = (isId: any) => {
     setOpenModalAddEdit(true)
@@ -36,28 +42,51 @@ export default function DevelopmentTable() {
     setOpenModalDetail(true)
   }
 
+  const handleOnChange = (event: any) => {
+    const val: any = event.target?.value
+    setSearchData(val)
+    if (val === '') {
+      setFilteredData(dataDevelopmentTable)
+    } else {
+      const filtered = dataDevelopmentTable?.filter((item: any) =>
+        item.name.toLowerCase().includes(val.toLowerCase())
+      )
+      setFilteredData(filtered)
+    }
+  }
+
   return (
     <>
       <Card className='flex-1'>
         <CardHeader>
           <CardTitle className='flex items-center justify-between'>
-            <span>Development Table</span>
-            <AddEditModal
-              setStatus={setStatus}
-              formData={formDevelopmentTable}
-              setFormData={setFormDevelopmentTable}
-              data={dataDevelopmentTable}
-              setData={setDataDevelopmentTable}
-              isStatus={isStatus}
-              openModal={openModalAddEdit}
-              setOpenModal={setOpenModalAddEdit}
-            >
-              <>
-                <Button size={'sm'} onClick={() => setOpenModalAddEdit(true)}>
-                  <PlusIcon className='w-4' />
-                </Button>
-              </>
-            </AddEditModal>
+            <span className='text-lg'>Development Table</span>
+            <div className='w-1/2 flex items-center gap-1'>
+              <input
+                type='text'
+                name='search'
+                placeholder='Search data...'
+                className='w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 text-sm outline-none text-gray-700 px-3 leading-8 transition-colors duration-200 ease-in-out'
+                value={searchData}
+                onChange={handleOnChange}
+              />
+              <AddEditModal
+                setStatus={setStatus}
+                formData={formDevelopmentTable}
+                setFormData={setFormDevelopmentTable}
+                data={dataDevelopmentTable}
+                setData={setDataDevelopmentTable}
+                isStatus={isStatus}
+                openModal={openModalAddEdit}
+                setOpenModal={setOpenModalAddEdit}
+              >
+                <>
+                  <Button size={'sm'} onClick={() => setOpenModalAddEdit(true)}>
+                    <PlusIcon className='w-4' />
+                  </Button>
+                </>
+              </AddEditModal>
+            </div>
           </CardTitle>
         </CardHeader>
         <CardContent className='p-1'>
@@ -66,16 +95,16 @@ export default function DevelopmentTable() {
             onEdit={onEdit}
             onView={onView}
             title='Development Table'
-            data={dataDevelopmentTable}
+            data={filteredData}
             columns={['name', 'task', 'progress']}
           />
         </CardContent>
       </Card>
 
       <ModalDelete
-        data={dataDevelopmentTable}
+        data={filteredData}
         detailData={detail}
-        setData={setDataDevelopmentTable}
+        setData={setFilteredData}
         openDialog={openModalDelete}
         setOpenDialog={setOpenModalDelete}
       />
