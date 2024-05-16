@@ -44,9 +44,9 @@ const AddEditModal: FC<Props> = ({
 
   const validateForm = () => {
     const newErrors: any = {}
-    if (!formData.name) newErrors.name = 'Company name is required'
-    if (!formData.department) newErrors.department = 'Department is required'
-    if (!formData.post_code) newErrors.post_code = 'Post Code is required'
+    if (!formData.name) newErrors.name = 'Name is required'
+    if (!formData.email) newErrors.email = 'Email is required'
+    if (!formData.gender) newErrors.gender = 'Gender is required'
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -61,9 +61,9 @@ const AddEditModal: FC<Props> = ({
       isData.forEach((item: any) => {
         if (item.id === isStatus.id) {
           item.name = formData.name
-          item.department = formData.department
-          item.location = formData.location
-          item.post_code = formData.post_code
+          item.email = formData.email
+          item.position = formData.position
+          item.gender = formData.gender
         }
       })
       setOpenModal(false)
@@ -71,14 +71,14 @@ const AddEditModal: FC<Props> = ({
       isData.push({
         id: uid(),
         name: formData.name,
-        department: formData.department,
-        location: formData.location,
-        post_code: formData.post_code,
+        email: formData.email,
+        position: formData.position,
+        gender: formData.gender,
       })
       setOpenModal(false)
     }
     setData(isData)
-    setFormData({name: '', department: '', location: '', post_code: ''})
+    setFormData({name: '', position: '', email: '', gender: ''})
     setStatus({id: null, status: false})
   }
 
@@ -88,15 +88,15 @@ const AddEditModal: FC<Props> = ({
     if (isStatus.id !== null) {
       setFormData({
         name: result?.name,
-        department: result?.department,
-        location: result?.location,
-        post_code: result?.post_code,
+        email: result?.email,
+        position: result?.position,
+        gender: result?.gender,
       })
     }
   }, [data, isStatus])
 
   const onClose = () => {
-    setFormData({name: '', department: '', location: '', post_code: ''})
+    setFormData({name: '', position: '', email: '', gender: ''})
     setStatus({id: null, status: false})
     setErrors({})
   }
@@ -125,54 +125,54 @@ const AddEditModal: FC<Props> = ({
               <input
                 name='name'
                 type='text'
-                placeholder='Type a company name'
+                placeholder='Type a name'
                 className={`${styleCustom.field}`}
                 value={formData.name}
                 onChange={handleOnChange}
               />
               {errors.name && <p className={`${styleCustom.error}`}>{errors.name}</p>}
             </div>
-
             <div className={`${styleCustom.section}`}>
               <label className={`${styleCustom.label}`}>
-                Department<span className='text-red-500'>&#42;</span>
+                Email<span className='text-red-500'>&#42;</span>
               </label>
               <input
-                name='department'
-                type='text'
-                placeholder='Type a department'
+                name='email'
+                type='email'
+                placeholder='Type a email'
                 className={`${styleCustom.field}`}
-                value={formData.department}
+                value={formData.email}
                 onChange={handleOnChange}
               />
-              {errors.department && <p className={`${styleCustom.error}`}>{errors.department}</p>}
+              {errors.email && <p className={`${styleCustom.error}`}>{errors.email}</p>}
             </div>
-
             <div className={`${styleCustom.section}`}>
-              <label className={`${styleCustom.label}`}>Location</label>
+              <label className={`${styleCustom.label}`}>Position</label>
               <input
-                name='location'
+                name='position'
                 type='text'
-                placeholder='Type a location'
+                placeholder='Type a position'
                 className={`${styleCustom.field}`}
-                value={formData.location}
+                value={formData.position}
                 onChange={handleOnChange}
               />
+              {errors.position && <p className={`${styleCustom.error}`}>{errors.position}</p>}
             </div>
-
             <div className={`${styleCustom.section}`}>
               <label className={`${styleCustom.label}`}>
-                Post Code<span className='text-red-500'>&#42;</span>
+                Gender<span className='text-red-500'>&#42;</span>
               </label>
-              <input
-                name='post_code'
-                type='number'
-                placeholder='Type a post code'
-                className={`${styleCustom.field}`}
-                value={formData.post_code}
+              <select
+                name='gender'
+                className={`${styleCustom.field} text-sm py-2`}
+                value={formData.gender}
                 onChange={handleOnChange}
-              />
-              {errors.post_code && <p className={`${styleCustom.error}`}>{errors.post_code}</p>}
+              >
+                <option value=''>Choose Gender</option>
+                <option value='male'>Male</option>
+                <option value='female'>Female</option>
+              </select>
+              {errors.gender && <p className={`${styleCustom.error}`}>{errors.gender}</p>}
             </div>
           </section>
           <AlertDialogFooter className='mt-8'>
