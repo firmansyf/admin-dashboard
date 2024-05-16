@@ -1,8 +1,8 @@
 import {FC} from 'react'
 import DevelopmentTable from './development-table'
-import CheckTable from './check-table'
-import UsersTable from './users-table'
 import CompanyTable from './company-table'
+import CheckTable from './check-table'
+import UserTable from './users-table'
 
 const TableModule: FC = () => {
   return (
@@ -13,7 +13,7 @@ const TableModule: FC = () => {
           <CheckTable />
         </section>
         <section className='w-full flex gap-3'>
-          <UsersTable />
+          <UserTable />
           <CompanyTable />
         </section>
       </main>

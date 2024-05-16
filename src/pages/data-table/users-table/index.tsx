@@ -7,7 +7,7 @@ import {PlusIcon} from '@heroicons/react/24/outline'
 import ModalDelete from './delete'
 import ModalDetail from './detail'
 
-export default function DevelopmentTable() {
+export default function UserTable() {
   const [dataUserTable, setDataUserTable] = useState<any[]>([])
   const [openModalAddEdit, setOpenModalAddEdit] = useState<boolean>(false)
   const [openModalDelete, setOpenModalDelete] = useState<boolean>(false)
@@ -60,7 +60,7 @@ export default function DevelopmentTable() {
       <Card className='flex-1'>
         <CardHeader>
           <CardTitle className='flex items-center justify-between'>
-            <span className='text-lg'>Users Table</span>
+            <span className='text-lg'>User Table</span>
             <div className='w-1/2 flex items-center gap-1'>
               <input
                 type='text'

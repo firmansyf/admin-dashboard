@@ -18,7 +18,7 @@ export function Navbar() {
   const [layout, _] = pathname.split('/').filter((el) => el !== '')
 
   return (
-    <nav className='rounded-xl bg-[#fff] translate-all sticky top-4 z-40 p-5 shadow-md shadow-blue-gray-500/5 mb-4'>
+    <nav className='rounded-xl backdrop-blur-md translate-all sticky top-4 z-40 p-5 shadow-md shadow-blue-gray-500/5 mb-4'>
       <div className='flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center'>
         <div className='capitalize'>
           <Breadcrumb>
