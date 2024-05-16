@@ -35,7 +35,7 @@ const DataTableComponent: FC<Props> = ({data, columns, title, onEdit, onDelete, 
         </TableRow>
       </TableHeader>
       <TableBody className='overflow-x-auto w-full relative'>
-        {data?.lenght > 0 ? (
+        {data?.length > 0 ? (
           data.map((d: any, i: number) => (
             <TableRow key={i}>
               {columns.map((column: any, index: number) => (

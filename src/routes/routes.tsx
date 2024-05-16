@@ -1,6 +1,8 @@
 import {Dashboard} from '@/pages/dashboard'
 import TableModule from '@/pages/data-table/dataTable'
-import {SquaresPlusIcon, Square3Stack3DIcon} from '@heroicons/react/24/outline'
+import ProfileModule from '@/pages/profile/profile'
+
+import {SquaresPlusIcon, Square3Stack3DIcon, UserIcon} from '@heroicons/react/24/outline'
 
 const icon = {
   className: 'w-5 h-5 text-inherit',
@@ -20,12 +22,12 @@ export const routes = [
         path: '/tables',
         element: <TableModule />,
       },
-      // {
-      //   icon: <FolderOpenIcon {...icon} />,
-      //   name: 'hadist',
-      //   path: '/hadist',
-      //   element: <HadistModule />,
-      // },
+      {
+        icon: <UserIcon {...icon} />,
+        name: 'profile',
+        path: '/profile',
+        element: <ProfileModule />,
+      },
       // {
       //   icon: <CalendarDaysIcon {...icon} />,
       //   name: 'kalender Islam',

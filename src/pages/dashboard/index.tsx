@@ -1,7 +1,14 @@
-import { FC } from "react";
+import {FC} from 'react'
+import FirstCard from './card/FirstCard'
+import SecondCard from './card/SecondCard'
 
 const Dashboard: FC = () => {
-  return <>Dashboard work!</>;
-};
+  return (
+    <main className='flex flex-col gap-5'>
+      <FirstCard />
+      <SecondCard />
+    </main>
+  )
+}
 
-export { Dashboard };
+export {Dashboard}
