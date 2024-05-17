@@ -93,6 +93,7 @@ const AddEditModal: FC<Props> = ({
         post_code: result?.post_code,
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isStatus])
 
   const onClose = () => {

@@ -5,7 +5,7 @@ import {useEffect, useState} from 'react'
 import {PlusIcon} from '@heroicons/react/24/outline'
 import ModalDelete from './delete'
 import ModalDetail from './detail'
-import AddEditModal from './AddEdit'
+import AddEditModal from './AddEditData'
 
 export default function CompanyTable() {
   const [dataCompanyTable, setDataCompanyTable] = useState<any[]>([])
