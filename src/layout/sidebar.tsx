@@ -10,7 +10,7 @@ export default function Sidebar({routes}: any) {
   const [controller, dispatch]: any = useLayoutController()
   const {sidenavType, openSidenav} = controller
 
-  const sidenavTypes = {
+  const sidenavTypes: any = {
     dark: 'bg-gradient-to-br from-gray-800 to-gray-900',
     white: 'bg-white shadow-sm',
     transparent: 'bg-transparent',
