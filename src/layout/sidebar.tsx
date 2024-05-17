@@ -7,7 +7,7 @@ import {XMarkIcon} from '@heroicons/react/24/outline'
 import {NavLink as Link} from 'react-router-dom'
 
 export default function Sidebar({routes}: any) {
-  const [controller, dispatch] = useLayoutController()
+  const [controller, dispatch]: any = useLayoutController()
   const {sidenavType, openSidenav} = controller
 
   const sidenavTypes = {
