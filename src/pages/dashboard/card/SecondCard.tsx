@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts'
 import {Card, CardContent, CardHeader} from '@/components/ui/card'
 
 export default function SecondCard() {
-  const [chartState] = useState({
+  const [chartState, setState] = useState({
     series: [44, 55, 13, 43, 22],
     options: {
       chart: {

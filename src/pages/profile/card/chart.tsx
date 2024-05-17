@@ -5,7 +5,7 @@ import {useState} from 'react'
 import Chart from 'react-apexcharts'
 
 export default function ChartCard() {
-  const [chartState] = useState({
+  const [chartState, setState] = useState({
     series: [
       {
         name: 'series1',
