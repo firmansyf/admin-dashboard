@@ -2,10 +2,10 @@ import DataTableComponent from '@/components/data-table'
 import {Button} from '@/components/ui/button'
 import {Card, CardHeader, CardTitle, CardContent} from '@/components/ui/card'
 import {useEffect, useState} from 'react'
-import AddEditModal from './AddEdit'
 import {PlusIcon} from '@heroicons/react/24/outline'
 import ModalDelete from './delete'
 import ModalDetail from './detail'
+import AddEditModal from './AddEdit'
 
 export default function CompanyTable() {
   const [dataCompanyTable, setDataCompanyTable] = useState<any[]>([])
