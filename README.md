@@ -12,15 +12,15 @@ Step by step run project
 
 ### Main Feature
 
-> Create Data
-> Read Data
-> Update Data
-> Delete Data
-> Searching Data By. Name
+- Create Data
+- Read Data
+- Update Data
+- Delete Data
+- Searching Data By. Name
 
 ### Stack
 
-> Vite
-> React Typescript
-> Tailwind
-> Apex Chart
+- Vite
+- React Typescript
+- Tailwind
+- Apex Chart
