@@ -1,9 +1,8 @@
-import {useState} from 'react'
 import Chart from 'react-apexcharts'
 import {Card, CardContent, CardHeader} from '@/components/ui/card'
 
 export default function SecondCard() {
-  const [chartState] = useState({
+  const chartState = {
     series: [44, 55, 13, 43, 22],
     options: {
       chart: {
@@ -25,7 +24,7 @@ export default function SecondCard() {
         },
       ],
     },
-  })
+  }
 
   return (
     <section className='flex items-center gap-4 w-full max-sm:flex-col max-lg:flex-row'>
