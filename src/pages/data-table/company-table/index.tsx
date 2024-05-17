@@ -58,9 +58,9 @@ export default function CompanyTable() {
   return (
     <>
       <Card className='flex-1'>
-        <CardHeader>
+        <CardHeader className='bg-[#eeefff]'>
           <CardTitle className='flex items-center justify-between'>
-            <span className='text-lg'>Company Table</span>
+            <span className='text-lg font-semibold text-blue-900'>Company Table</span>
             <div className='w-1/2 flex items-center gap-1'>
               <input
                 type='text'

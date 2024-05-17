@@ -115,7 +115,7 @@ const AddEditModal: FC<Props> = ({
       <AlertDialogTrigger asChild>{children}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle>Add Data</AlertDialogTitle>
+          <AlertDialogTitle>{isStatus?.id ? 'Edit' : 'Add'} Data</AlertDialogTitle>
         </AlertDialogHeader>
         <form onSubmit={handleOnSubmit}>
           <section className='flex flex-col w-full gap-3'>

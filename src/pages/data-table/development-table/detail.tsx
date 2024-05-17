@@ -7,6 +7,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from '@/components/ui/alert-dialog'
+import {Progress} from '@/components/ui/progress'
+
 import {FC} from 'react'
 
 type Props = {
@@ -42,7 +44,7 @@ const ModalDetail: FC<Props> = ({detailData, openDialog, setOpenDialog}) => {
               </div>
               <div className={`${styleCustom.section}`}>
                 <label className={`${styleCustom.label}`}>Progress</label>
-                <span className='font-bold text-black'>{detailData?.progress}</span>
+                <Progress value={detailData?.progress} className='w-[60%]' />
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>

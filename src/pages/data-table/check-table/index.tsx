@@ -58,9 +58,9 @@ export default function CheckTable() {
   return (
     <>
       <Card className='flex-1'>
-        <CardHeader>
+        <CardHeader className='bg-[#eeefff]'>
           <CardTitle className='flex items-center justify-between'>
-            <span className='text-lg'>Check Table</span>
+            <span className='text-lg text-blue-900 font-semibold'>Check Table</span>
             <div className='w-1/2 flex items-center gap-1'>
               <input
                 type='text'
