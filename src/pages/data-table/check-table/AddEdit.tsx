@@ -48,6 +48,7 @@ const AddEditModal: FC<Props> = ({
     if (!formData.status) newErrors.status = 'Status is required'
     if (!formData.task) newErrors.task = 'Task is required'
     if (!formData.position) newErrors.position = 'Position is required'
+    if (!formData.status) newErrors.status = 'Status is required'
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
   }
@@ -146,10 +147,12 @@ const AddEditModal: FC<Props> = ({
                 value={formData.task}
                 onChange={handleOnChange}
               />
-              {errors.email && <p className={`${styleCustom.error}`}>{errors.email}</p>}
+              {errors.task && <p className={`${styleCustom.error}`}>{errors.task}</p>}
             </div>
             <div className={`${styleCustom.section}`}>
-              <label className={`${styleCustom.label}`}>Position</label>
+              <label className={`${styleCustom.label}`}>
+                Position<span className='text-red-500'>&#42;</span>
+              </label>
               <input
                 name='position'
                 type='text'
@@ -175,7 +178,7 @@ const AddEditModal: FC<Props> = ({
                 <option value='hold'>On Hold</option>
                 <option value='done'>Done</option>
               </select>
-              {errors.gender && <p className={`${styleCustom.error}`}>{errors.gender}</p>}
+              {errors.status && <p className={`${styleCustom.error}`}>{errors.status}</p>}
             </div>
           </section>
           <AlertDialogFooter className='mt-8'>

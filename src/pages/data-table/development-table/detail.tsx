@@ -19,7 +19,7 @@ type Props = {
 
 const ModalDetail: FC<Props> = ({detailData, openDialog, setOpenDialog}) => {
   const styleCustom = {
-    section: 'flex flex-col gap-1',
+    section: 'flex flex-col gap-1 items-center',
     label: 'text-semibold text-sm',
   }
 
