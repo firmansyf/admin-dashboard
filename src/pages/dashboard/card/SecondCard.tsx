@@ -26,7 +26,7 @@ export default function SecondCard() {
             },
           },
         ],
-      } as ApexOptions, // Pastikan ini sesuai dengan tipe ApexOptions
+      } as ApexOptions,
     }),
     []
   )
