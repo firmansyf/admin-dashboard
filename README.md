@@ -1,5 +1,11 @@
 ## Admin Dashboard
 
+Web
+
+```bash
+ https://firmansyf.github.io/admin-dashboard
+```
+
 Step by step run project
 
 ```bash
