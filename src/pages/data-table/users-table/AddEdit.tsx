@@ -93,6 +93,7 @@ const AddEditModal: FC<Props> = ({
         gender: result?.gender,
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isStatus])
 
   const onClose = () => {

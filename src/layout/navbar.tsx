@@ -12,9 +12,10 @@ import {useLocation} from 'react-router-dom'
 import {Bars3Icon} from '@heroicons/react/16/solid'
 
 export function Navbar() {
-  const [controller, dispatch] = useLayoutController()
+  const [controller, dispatch]: any = useLayoutController()
   const {openSidenav} = controller
   const {pathname} = useLocation()
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [layout, _] = pathname.split('/').filter((el) => el !== '')
 
   return (
