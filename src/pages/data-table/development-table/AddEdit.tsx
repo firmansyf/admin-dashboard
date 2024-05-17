@@ -94,6 +94,7 @@ const AddEditModal: FC<Props> = ({
         progress: result?.progress,
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, isStatus])
 
   const onClose = () => {

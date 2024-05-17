@@ -4,7 +4,6 @@ import {createContext, useMemo, useContext, useReducer} from 'react'
 
 export const LayoutContext = createContext(null)
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function reducer(state: any, action: any) {
   switch (action.type) {
     case 'OPEN_SIDENAV': {
@@ -50,7 +49,6 @@ export function LayoutControllerProvider({children}: Props) {
   return <LayoutContext.Provider value={value}>{children}</LayoutContext.Provider>
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useLayoutController() {
   const context = useContext(LayoutContext)
 
